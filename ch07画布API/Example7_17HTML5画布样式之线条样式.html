@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布样式之线条样式</title>
+    </head>
+    <body>
+        <h3>HTML5画布样式之线条样式</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+			//设置线段顶端样式为square
+			ctx.lineCap = "square";
+			//设置线段宽度为5像素
+			ctx.lineWidth = "5";
+			//画笔设置为绿色描边
+			ctx.strokeStyle = "green";
+			
+			//开始绘制树叶部分
+			ctx.beginPath();
+			//绘制第一层树叶
+			ctx.moveTo(150,20);
+			ctx.lineTo(100,50);
+			ctx.lineTo(200,50);
+			ctx.lineTo(150,20);		
+			//绘制第二层树叶
+			ctx.moveTo(150,50);
+			ctx.lineTo(80,90);
+			ctx.lineTo(220,90);
+			ctx.lineTo(150,50);		
+			//绘制第三层树叶
+			ctx.moveTo(150,90);
+			ctx.lineTo(60,130);
+			ctx.lineTo(240,130);
+			ctx.lineTo(150,90);
+			ctx.stroke();
+			ctx.closePath();
+			
+			//画笔设置为褐色描边
+			ctx.strokeStyle = "brown";
+			//开始绘制树干部分
+			ctx.beginPath();		
+			ctx.moveTo(130,135);
+			ctx.lineTo(130,180);
+			ctx.lineTo(170,180);
+			ctx.lineTo(170,135);
+			ctx.stroke();
+			ctx.closePath();
+        </script>
+    </body>
+</html>

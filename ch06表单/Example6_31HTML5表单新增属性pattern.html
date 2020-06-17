@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>HTML5表单新增属性pattern的简单应用</title>
+        <style>
+            form {
+                width: 280px;
+                margin: 20px;
+            }
+            div {
+                text-align: center;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>HTML5表单新增属性pattern的简单应用</h3>
+        <hr />
+        <form method="post" action="URL">
+            <fieldset>
+                <legend>
+                    新增属性pattern的简单应用
+                </legend>
+                <label>邮政编码：
+                    <input type="text" name="country_code" pattern="[0-9]{6}" title="请输入6位国内邮政编码" />
+                </label>
+                <br />
+            </fieldset>
+            <div>
+                <input type="submit" value="提交" />
+            </div>
+        </form>
+    </body>
+</html>

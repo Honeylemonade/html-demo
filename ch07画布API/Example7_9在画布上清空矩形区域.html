@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>在画布上清空矩形区域</title>
+    </head>
+    <body>
+        <h3>在画布上清空矩形区域</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+			//设置填充颜色
+			ctx.fillStyle="orange";
+			//绘制实心矩形
+            ctx.fillRect(50,50,200,100);
+			//清空其中一块矩形区域
+			ctx.clearRect(100,75,100,50);
+        </script>
+    </body>
+</html>
+

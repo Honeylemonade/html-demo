@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>终止媒体文件的下载</title>
+    </head>
+    <body>
+        <h3>终止媒体文件的下载</h3>
+        <hr />
+        <!--视频播放窗口-->
+        <video id="media" src="video/art.mp4" controls></video>
+        <br />
+        <!--按钮-->
+        <button onclick="stopMedia()">
+            点击此处终止视频下载
+        </button>
+        <script>
+            function stopMedia() {
+                //获取媒体元素对象
+                var media = document.getElementById("media");
+                //暂停当前媒体文件的播放
+                media.pause();
+                //将src属性设置为空值
+                mediaFile.src = "";
+            }
+        </script>
+    </body>
+</html>

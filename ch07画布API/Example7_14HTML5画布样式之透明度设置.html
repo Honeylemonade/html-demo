@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布颜色特效之透明度设置</title>
+    </head>
+    <body>
+        <h3>HTML5画布颜色特效之透明度设置</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            //设置填充颜色为红色，透明度0.2
+            ctx.fillStyle = "rgba(255,0,0,0.2)";
+			//绘制矩形
+            ctx.fillRect(0,0,300,200);
+			//设置填充颜色为红色，透明度0.4
+            ctx.fillStyle = "rgba(255,0,0,0.4)";
+			//绘制矩形
+            ctx.fillRect(25,25,250,150);
+			//设置填充颜色为红色，透明度0.6
+            ctx.fillStyle = "rgba(255,0,0,0.6)";
+			//绘制矩形
+            ctx.fillRect(50,50,200,100);
+			//设置填充颜色为红色，透明度0.8
+            ctx.fillStyle = "rgba(255,0,0,0.8)";
+			//绘制矩形
+            ctx.fillRect(75,75,150,50);
+        </script>
+    </body>
+</html>

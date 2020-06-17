@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布变形效果之移动</title>
+    </head>
+    <body>
+        <h3>HTML5画布变形效果之移动</h3>
+        <hr />
+        <canvas id="myCanvas" width="200" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+			//以原点为圆心绘制圆弧
+			drawCircle();
+			
+			//将原点向右平移200px，并绘制圆弧
+			ctx.translate(200,0);
+			drawCircle();
+			
+			//将原点垂直下移200px，并绘制圆弧
+			ctx.translate(0,200);
+			drawCircle();
+			
+			//将原点向左平移200px，并绘制圆弧
+			ctx.translate(-200,0);
+			drawCircle();
+			
+			//将原点移动到画布中心，并绘制圆弧
+			ctx.translate(100,-100);
+			drawCircle();
+			
+			//绘制圆心在原点，半径为50的圆弧
+			function drawCircle(){
+				ctx.beginPath();
+				ctx.arc(0,0,50,0,Math.PI*2, true);
+				ctx.stroke();				
+			}
+        </script>
+    </body>
+</html>

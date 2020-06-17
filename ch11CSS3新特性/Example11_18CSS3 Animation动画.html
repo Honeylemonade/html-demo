@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 3D Animation动画效果</title>
+        <style>
+            div {
+                height: 100px;
+                background: red;
+                animation: rainbow 10s;
+				/* 兼容旧版Firefox */
+                -moz-animation: rainbow 10s; 				
+				/* 兼容旧版Safari 和 Chrome */
+                -webkit-animation: rainbow 10s; 
+            }
+            @keyframes rainbow{
+            0%{background-color:red;}
+            20%{background-color:orange;}
+            40%{background-color:yellow;}
+            60%{background-color:green;}
+            80%{background-color:blue;}
+            100%{background-color:purple;}
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 Animation动画效果</h3>
+        <div></div>
+    </body>
+</html>

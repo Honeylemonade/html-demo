@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>HTML5表单新增元素标签datalist的简单应用</title>
+        <style>
+            form {
+                width: 280px;
+                margin: 20px;
+            }
+            div {
+                text-align: center;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>HTML5表单新增元素标签datalist的简单应用</h3>
+        <hr />
+        <form method="post" action="URL">
+            <fieldset>
+                <legend>
+                    新增元素标签datalist的简单应用
+                </legend>
+                <label>请选择：
+                    <input type="text" list="myList" />
+                </label>
+                <datalist id="myList">
+                    <option value="apple">苹果</option>
+                    <option value="grape">葡萄</option>
+                    <option value="banana">香蕉</option>
+                </datalist>
+            </fieldset>
+            <div>
+                <input type="submit" value="提交" />
+            </div>
+        </form>
+    </body>
+</html>

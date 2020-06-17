@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布样式之图案填充</title>
+    </head>
+    <body>
+        <h3>HTML5画布样式之图案填充</h3>
+        <hr />
+        <canvas id="myCanvas" width="200" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            //指定图片素材来源
+            var img = new Image();
+            img.src = "image/pattern.png";
+            //图片加载完毕
+            img.onload = function() {
+                //设置图案效果为重复平铺
+                var pattern = ctx.createPattern(img, "repeat");
+				//开始绘制路径
+                ctx.beginPath();
+				//绘制圆弧
+                ctx.arc(100, 100, 100, 0, Math.PI * 2, true);
+				//图形描边
+                ctx.stroke();
+                //设置填充颜色
+                ctx.fillStyle = pattern;
+                //填充图形
+                ctx.fill();
+            }
+        </script>
+    </body>
+</html>

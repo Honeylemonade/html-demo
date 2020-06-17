@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布变形效果之缩放</title>
+    </head>
+    <body>
+        <h3>HTML5画布变形效果之缩放</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="260" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+		<script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+			//设置参照点坐标
+            ctx.translate(150, 130);
+			//将绘制内容缩放为原来的二分之一大小
+			ctx.scale(0.5,0.5);
+            for (var i = 0; i < 6; i++) {
+				//设置每次旋转的角度为60°
+                ctx.rotate(Math.PI * 2 / 6);
+				//开始绘制图形
+                ctx.beginPath();
+				//绘制半径为50像素的空心圆
+                ctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+				//为圆进行描边
+                ctx.stroke();			
+            }
+        </script>
+    </body>
+</html>

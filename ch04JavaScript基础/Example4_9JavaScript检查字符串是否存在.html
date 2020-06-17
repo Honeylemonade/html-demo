@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript检测字符串是否存在</title>
+    </head>
+    <body>
+        <h3>JavaScript检测字符串是否存在</h3>
+        <hr />
+		<p>查找字母y在字符串"Happy Birthday"中的位置</p>
+        <script>
+            //声明变量msg
+            var msg = "Happy Birthday";
+            //检测字符y存在的位置（正序）
+			var firstY = msg.indexOf("y");
+			//检测字符y存在的位置（倒序）
+			var lastY = msg.lastIndexOf("y");
+            alert('indexOf("y")：'+firstY+'\nlastIndexOf("y")：'+lastY);
+        </script>
+    </body>
+</html>

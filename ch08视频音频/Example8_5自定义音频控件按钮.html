@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>测试浏览器对HTML5音频标签audio的支持情况</title>
+    </head>
+    <body>
+        <h3>测试浏览器对HTML5音频标签audio的支持情况</h3>
+        <hr />
+        <audio id="music01">
+            <source src="music/Serenade.ogg">
+            <source src="music/Serenade.mp3">
+        </audio>
+        <button id="btn" onclick="toggleMusic()">
+            播放
+        </button>
+        <script>
+            //获取音频对象
+            var music = document.getElementById("music01");
+
+            //获取音乐切换按钮
+            var toggleBtn = document.getElementById("btn");
+
+            //音乐播放/暂停切换方法
+            function toggleMusic() {
+                if (music.paused) {
+                    music.play();
+                    //播放音乐
+                    toggleBtn.innerHTML = "暂停";
+                } else {
+                    music.pause();
+                    //暂停音乐
+                    toggleBtn.innerHTML = "播放";
+                }
+            }
+        </script>
+    </body>
+</html>

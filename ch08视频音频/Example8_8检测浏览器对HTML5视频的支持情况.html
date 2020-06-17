@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>测试浏览器对HTML5视频标签video的支持情况</title>
+    </head>
+    <body>
+        <h3>测试浏览器对HTML5视频标签video的支持情况</h3>
+        <hr />
+        <div id="support"></div>
+        <script>
+            function test() {
+                var supportVideo = !!document.createElement("video").canPlayType;
+                if (supportVideo) {
+                    document.getElementById("support").innerHTML = "恭喜，您的浏览器支持HTML5视频";
+                } else {
+                    document.getElementById("support").innerHTML = "对不起，您的浏览器不支持HTML5视频";
+                }
+            }
+
+            test();
+        </script>
+    </body>
+</html>

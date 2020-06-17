@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Transition动画效果</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+            /*背景颜色改变*/
+            div.style1 {
+                transition: background-color 2s;
+				/* 兼容旧版Firefox */
+                -moz-transition: background-color 2s; 
+				/* 兼容旧版Safari and Chrome */
+                -webkit-transition: background-color 2s; 
+            }
+            div.style1:hover {
+                background-color: blue;
+            }
+            /*宽度改变*/
+            div.style2 {
+                transition: width 2s;
+				/* 兼容旧版Firefox */
+                -moz-transition: width 2s;
+				/* 兼容旧版Safari and Chrome */ 
+                -webkit-transition: width 2s; 
+            }
+            div.style2:hover {
+                width: 300px;
+            }
+            /*颜色和宽度同时改变*/
+            div.style3 {
+                transition: background-color 2s, width 2s;
+				 /* 兼容旧版Firefox */
+                -moz-transition: background-color 2s, width 2s;
+				/* 兼容旧版Safari and Chrome */
+                -webkit-transition: background-color 2s, width 2s; 
+            }
+            div.style3:hover {
+                background-color: blue;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 Transition动画效果</h3>
+        <h4>CSS3 Transition动画颜色渐变效果</h4>
+        <div class="style1"></div>
+
+        <hr>
+        <h4>CSS3 Transition动画形状渐变效果</h4>
+        <div class="style2"></div>
+
+        <hr>
+        <h4>CSS3 Transition动画颜色和宽度同时渐变效果</h4>
+        <div class="style3"></div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>检测浏览器对HTML5 Web存储的支持</title>
+    </head>
+    <body>
+        <h3>检测浏览器对HTML5 Web存储的支持</h3>
+        <hr />
+        <div id="support1"></div>
+        <div id="support2"></div>
+        <script>
+            function checkSupport() {
+                //对localStorage的支持情况检查
+                if (window.localStorage) {
+                    document.getElementById("support1").innerHTML = "恭喜，您的浏览器支持HTML5 Web存储中的localStorage存储";
+                } else {
+                    document.getElementById("support1").innerHTML = "对不起，您的浏览器不支持HTML5 Web存储中的localStorage存储";
+                }
+                //对sessionStorage的支持情况检查
+                if (window.sessionStorage) {
+                    document.getElementById("support2").innerHTML = "恭喜，您的浏览器支持HTML5 Web存储中的sessionStorage存储";
+                } else {
+                    document.getElementById("support2").innerHTML = "对不起，您的浏览器不支持HTML5 Web存储中的sessionStorage存储";
+                }
+            }
+            checkSupport();
+        </script>
+    </body>
+</html>

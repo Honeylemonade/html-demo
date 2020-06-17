@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>颜色设置的简单应用</title>
+    </head>
+    <body>
+        <h3>颜色设置的简单应用</h3>
+        <hr />
+        <canvas id="myCanvas" width="250" height="110" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+			for(var i=0;i<5;i++){
+				var green = 255-51*i;
+				
+				//设置线条颜色
+				ctx.strokeStyle = "rgb(0,"+green+",255)";
+				//绘制空心圆
+				ctx.beginPath();
+				ctx.arc(40+40*i,30,20,0, Math.PI*2, true);
+				ctx.stroke();
+				
+				//设置填充颜色
+				ctx.fillStyle = "rgb(0,"+green+",255)";
+				//绘制实心矩形
+				ctx.fillRect(20+40*i,60,40,40);	
+			}
+         </script>
+    </body>
+</html>

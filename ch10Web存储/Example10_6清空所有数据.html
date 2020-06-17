@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>HTML5 Web存储API之删除全部数据</title>
+        <style>
+            td {
+                text-align: center;
+            }
+            img.goods {
+                width: 200px;
+                height: 200px;
+                display: block;
+            }
+            img.cart {
+                width: 80px;
+                height: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>HTML5 Web存储API之删除全部数据</h3>
+        <hr />
+        <table>
+            <tr>
+                <td><img class="goods" src="image/phone1.jpg" />
+                <button onclick="updateNum(1)">
+                    加入购物车
+                </button></td>
+                <td><img class="goods" src="image/phone2.jpg" />
+                <button onclick="updateNum(2)">
+                    加入购物车
+                </button></td>
+                <td><img class="goods" src="image/phone3.jpg" />
+                <button onclick="updateNum(3)">
+                    加入购物车
+                </button></td>
+            </tr>
+        </table>
+
+        <h4>我的购物车</h4>
+        <button onclick="clearAll()">
+            清空购物车
+        </button>
+        <ol id="myCart">购物车中尚无商品。</ol>
+
+        <script>
+            var myCart = document.getElementById("myCart");
+			//从localStorage中获取保存的商品数据
+            var item01 = localStorage.item01;
+            var item02 = localStorage.item02;
+            var item03 = localStorage.item03;
+			//如果没有获取到，则从0开始计数
+            if (item01 == null)
+                item01 = 0;
+            if (item02 == null)
+                item02 = 0;
+            if (item03 == null)
+                item03 = 0;
+
+            //更新购物车中的商品个数
+            function updateNum(n) {
+                if (n == 1)
+                    item01++;
+                else if (n == 2)
+                    item02++;
+                else if (n == 3)
+                    item03++;
+                showGoods();
+            }
+
+            //在购物车中显示商品列表
+			function showGoods() {
+                //清空购物车显示内容
+                myCart.innerHTML = "";
+
+                //判断商品不为空时显示
+				if (item01 != 0) {
+					localStorage.item01 = item01;
+                    addGood(1, item01);
+                }
+                if (item02 != 0) {
+					localStorage.item02 = item02;
+                    addGood(2, item02);
+                }
+                if (item03 != 0) {
+					localStorage.item03 = item03;
+                    addGood(3, item03);
+                }
+            }
+			
+            //添加第n件商品，共num个
+			function addGood(n, num) {
+                var good = document.createElement("li");
+                good.innerHTML = '<img src="image/phone' + n + '.jpg" class="cart" /> 共' + num + '件。';
+                myCart.appendChild(good);
+            }
+
+            //清空购物车
+			function clearAll() {
+                //清空购物车显示内容
+                myCart.innerHTML = "购物车中尚无商品。";
+                //清空商品个数
+                item01 = 0;
+                item02 = 0;
+                item03 = 0;
+                //清空存储数据
+                localStorage.clear();
+            }
+        </script>
+    </body>
+</html>

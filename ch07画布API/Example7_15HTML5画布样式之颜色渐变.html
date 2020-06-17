@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布颜色特效之颜色渐变</title>
+    </head>
+    <body>
+        <h3>HTML5画布颜色特效之颜色渐变</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="150" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            // 创建渐变1
+            var radgrad = ctx.createRadialGradient(50, 50, 20, 70, 70, 60);
+            radgrad.addColorStop(0, "rgba(0,0,255,0.6)");
+            radgrad.addColorStop(0.9, "rgba(0,0,255,1)");
+            radgrad.addColorStop(1, "rgba(0,0,255,0)");
+
+            // 画图形
+            ctx.fillStyle = radgrad;
+            ctx.fillRect(0, 0, 150, 150);
+
+            // 创建渐变2
+            var linear = ctx.createLinearGradient(150, 0, 300, 150);
+            linear.addColorStop(0, "rgb(0,0,255)");
+            linear.addColorStop(1, "rgb(255,0,0)");
+
+            // 画图形
+            ctx.fillStyle = linear;
+            ctx.fillRect(150, 0, 150, 150);
+        </script>
+    </body>
+</html>

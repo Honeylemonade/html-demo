@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>绘画状态的保存与恢复</title>
+    </head>
+    <body>
+        <h3>绘画状态的保存与恢复</h3>
+        <hr />
+        <canvas id="myCanvas" width="200" height="200" style="border:1px solid;">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+			
+            //设置填充颜色为黄色
+            ctx.fillStyle = "yellow";
+			//保存当前绘制状态1
+			ctx.save();
+            ctx.beginPath();
+            ctx.arc(100, 100, 100, 0, Math.PI * 2, true);
+            ctx.fill();
+			
+			//设置填充颜色为橙色
+			 ctx.fillStyle = "orange";
+			 //保存当前绘制状态2
+			 ctx.save();
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, 0, Math.PI * 2, true);
+            ctx.fill();
+			
+			//设置填充颜色为白色
+			ctx.fillStyle = "white";
+            ctx.beginPath();
+            ctx.arc(100, 100, 60, 0, Math.PI * 2, true);
+            ctx.fill();
+			
+			//恢复绘制状态2
+			ctx.restore();
+            ctx.beginPath();
+            ctx.arc(100, 100, 40, 0, Math.PI * 2, true);
+            ctx.fill();
+			
+			//恢复绘制状态1
+			ctx.restore();
+            ctx.beginPath();
+            ctx.arc(100, 100, 20, 0, Math.PI * 2, true);
+            ctx.fill();
+        </script>
+    </body>
+</html>

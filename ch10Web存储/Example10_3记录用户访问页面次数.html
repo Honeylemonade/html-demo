@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>记录用户页面访问次数</title>
+    </head>
+    <body>
+        <h3>记录用户页面访问次数</h3>
+        <hr />
+        localStorage存储：您曾经访问了当前页面<span id="time1">0</span>次。
+        <br />
+        sessionStorage存储：您曾经访问了当前页面<span id="time2">0</span>次。
+        <script>
+            //从Web存储中读取页面访问次数
+            var count1 = localStorage.getItem('count1');
+            var count2 = sessionStorage.getItem('count2');
+
+            //判断如果数据为空，则初始化为0
+            if (count1 == null)
+                count1 = 0;
+            if (count2 == null)
+                count2 = 0;
+
+            //在页面上显示数据
+            document.getElementById("time1").innerHTML = count1;
+            document.getElementById("time2").innerHTML = count2;
+
+            //使用Web存储技术保存页面访问次数
+            localStorage.setItem('count1', parseInt(count1) + 1);
+            sessionStorage.setItem('count2', parseInt(count2) + 1);
+        </script>
+    </body>
+</html>

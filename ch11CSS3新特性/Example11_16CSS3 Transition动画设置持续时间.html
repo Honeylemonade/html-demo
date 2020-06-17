@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 3D Transition动画设置持续时间</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background: red;
+				
+                /*设置渐变属性*/
+                transition-property: background-color;
+				 /* 兼容旧版Firefox */
+                -moz-transition-property: background-color;
+				/* 兼容旧版Safari and Chrome */
+                -webkit-transition-property: background-color;
+				 
+                /*设置持续时间*/
+                transition-duration: 8s;
+				/* 兼容旧版Firefox */
+                -moz-transition-duration: 8s; 
+				/* 兼容旧版Safari and Chrome */
+                -webkit-transition-duration: 8s; 
+            }
+            div:hover {
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 3D Transition动画设置持续时间</h3>
+        <hr>
+        <div></div>
+    </body>
+</html>

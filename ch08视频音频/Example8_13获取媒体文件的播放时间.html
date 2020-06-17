@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>获取媒体的播放时间</title>
+    </head>
+    <body>
+        <h3>获取媒体的播放时间</h3>
+        <hr />
+        <!--视频播放窗口-->
+        <video id="media" src="video/art.mp4" controls autoplay></video>
+        <br />
+		<!--按钮-->
+        <button onclick="getTime()">
+            点击此处获取视频时间信息
+        </button>
+		<!--视频播放的时间状态-->
+        <div id="status"></div>
+        <script>
+            function getTime() {
+                //获取视频对象
+                var media = document.getElementById("media");
+				//获取视频开始时间
+                var starttime = media.seekable.start(0);
+				//获取视频结束时间
+                var endtime = media.seekable.end(0);
+				//获取已经播放的时间
+                var play_end = media.played.end(0);
+
+                //获取div对象
+                var status = document.getElementById("status");
+				//更新视频播放的时间状态
+                status.innerHTML = "视频开始时间：" + starttime + "<br />视频结束时间：" + endtime + "<br />视频已播放时间：" + play_end;
+            }
+        </script>
+    </body>
+</html>

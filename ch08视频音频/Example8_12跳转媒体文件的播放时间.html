@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>跳转指定的播放时间</title>
+    </head>
+    <body>
+        <h3>跳转指定的播放时间</h3>
+        <hr />
+        <!--视频播放窗口-->
+        <video id="media" src="video/art.mp4" controls>
+            <!--直接在video标签内部添加提示语句，如果浏览器支持则不会显示出来。-->
+            对不起，您的浏览器不支持HTML5视频播放。
+        </video>
+        <div>
+            <!--跳转按钮-->
+            <button onclick="changeTime()">
+                跳转至8:00
+            </button>
+        </div>
+        <script>
+            //获取视频对象
+            var media = document.getElementById("media");
+            //跳转视频至指定时间继续播放
+            function changeTime() {
+                //跳转至第8分钟
+                media.currentTime = 480;
+                //开始播放
+                media.play();
+            }
+        </script>
+    </body>
+</html>

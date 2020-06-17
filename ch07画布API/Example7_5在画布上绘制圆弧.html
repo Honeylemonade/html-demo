@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>在画布上绘制圆弧</title>
+    </head>
+    <body>
+        <h3>在画布上绘制圆弧</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid;">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            //设置填充颜色为黄色
+            ctx.fillStyle = "yellow";
+
+            //绘制圆形的脸，并填充为黄色
+            ctx.beginPath();
+            ctx.arc(150, 100, 80, 0, Math.PI * 2, true);
+            ctx.stroke();
+            //如果不需要勾勒脸的轮廓，此句可省略
+            ctx.fill();
+
+            //设置填充颜色为黑色
+            ctx.fillStyle = "black";
+
+            //填充黑色的左眼
+            ctx.beginPath();
+            ctx.arc(190, 80, 10, 0, Math.PI * 2, true);
+            ctx.fill();
+
+            //填充黑色的右眼
+            ctx.beginPath();
+            ctx.arc(110, 80, 10, 0, Math.PI * 2, true);
+            ctx.fill();
+
+            //绘制带有弧度的笑容
+            ctx.beginPath();
+            ctx.arc(150, 110, 50, 0, Math.PI, false);
+            ctx.stroke();
+        </script>
+    </body>
+</html>

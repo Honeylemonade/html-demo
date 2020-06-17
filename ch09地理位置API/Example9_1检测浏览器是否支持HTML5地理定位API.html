@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>检测浏览器对HTML5地理定位API的支持情况</title>
+    </head>
+    <body>
+        <h3>检测浏览器对HTML5地理定位API的支持情况</h3>
+        <hr />
+        <div id="support"></div>
+        <script>
+            function test() {
+				//判断geolocation对象是否存在
+                if (navigator.geolocation) {
+                    document.getElementById("support").innerHTML = "恭喜，您的浏览器支持HTML5地理定位";
+                } else {
+                    document.getElementById("support").innerHTML = "对不起，您的浏览器不支持HTML5地理定位";
+                }
+            }
+            test();
+        </script>
+    </body>
+</html>

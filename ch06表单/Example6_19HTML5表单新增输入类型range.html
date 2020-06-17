@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>HTML5表单新增输入类型range的简单应用</title>
+        <style>
+            form {
+                width: 280px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>HTML5表单新增输入类型range的简单应用</h3>
+        <hr />
+        <form method="post" action="URL">
+            <fieldset>
+                <legend>
+                    新增输入类型range的简单应用
+                </legend>
+                <label>音量大小：
+                    <input type="range" name="range" id="range" min="0" max="100" step="1" value="0" onchange="change()" />
+                </label><span id="volume">0</span>
+            </fieldset>
+        </form>
+
+        <script>
+            //当用户拖动滑动条时触发onchange事件调用此函数
+            function change() {
+                //获取滑动条对象
+                var range = document.getElementById("range");
+                //获取span对象
+                var text = document.getElementById("volume");
+                text.innerHTML = range.value;
+            }
+        </script>
+    </body>
+</html>

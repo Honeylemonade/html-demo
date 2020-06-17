@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>在画布上绘制文字</title>
+    </head>
+    <body>
+        <h3>在画布上绘制文字</h3>
+        <hr />
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            //设置字体为加粗、68号字，serif
+            ctx.font = "bold 68px serif";
+
+            //设置填充色为红色
+            ctx.fillStyle = "red";
+
+            //填充文本内容
+            ctx.fillText("你好,", 50, 80);
+
+            //描边文本内容
+            ctx.strokeText("HTML5!", 70, 160);
+        </script>
+    </body>
+</html>

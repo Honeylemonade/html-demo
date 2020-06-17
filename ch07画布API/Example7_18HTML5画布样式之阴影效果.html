@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML5画布样式之阴影效果</title>
+    </head>
+    <body>
+        <h3>HTML5画布样式之阴影效果</h3>
+        <hr />
+        <canvas id="myCanvas" width="125" height="125" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            //设置阴影的x轴偏移
+			ctx.shadowOffsetX = 8;
+			//设置阴影的y轴偏移
+            ctx.shadowOffsetY = 8;
+			//设置阴影的模糊度
+            ctx.shadowBlur = 10;
+			//设置阴影的颜色
+            ctx.shadowColor = "black";
+			
+            //设置图形的填充色为红色
+			ctx.fillStyle = "red";
+			//绘制边长为50像素的矩形
+            ctx.fillRect(35, 35, 50, 50);
+        </script>
+    </body>
+</html>

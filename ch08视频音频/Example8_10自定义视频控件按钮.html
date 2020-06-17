@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>测试浏览器对HTML5音频标签audio的支持情况</title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>测试浏览器对HTML5音频标签audio的支持情况</h3>
+        <hr />
+        <!--视频画面-->
+        <video id="video01" src="video/art.mp4" width="400">
+            对不起，您的浏览器不支持HTML5视频API。
+        </video>
+
+        <!--播放/暂停按钮和画面放大、缩小按钮-->
+        <div>
+            <button id="toggleBtn" onclick="toggleVideo()">
+                播放
+            </button>
+            <button onclick="bigVideo()">
+                画面放大
+            </button>
+            <button onclick="smallVideo()">
+                画面缩小
+            </button>
+        </div>
+
+        <script>
+            //获取视频对象
+            var video01 = document.getElementById("video01");
+
+            //获取视频切换按钮
+            var toggleBtn = document.getElementById("toggleBtn");
+
+            //视频播放/暂停切换方法
+            function toggleVideo() {
+                if (video01.paused) {
+                    video01.play();
+                    //播放视频
+                    toggleBtn.innerHTML = "暂停";
+                } else {
+                    video01.pause();
+                    //暂停视频
+                    toggleBtn.innerHTML = "播放";
+                }
+            }
+
+            //视频放大方法
+            function bigVideo() {
+                video01.width = "600";
+            }
+
+            //视频缩小方法
+            function smallVideo() {
+                video01.width = "200";
+            }
+        </script>
+    </body>
+</html>
